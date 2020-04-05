@@ -1,6 +1,5 @@
 <style lang="less">
 </style>
-
 <script>
 import wepy from 'wepy'
 import 'wepy-async-function'
@@ -8,7 +7,7 @@ export default class extends wepy.app {
   config = {
     pages: [
       // 底部tab栏
-      'pages/table/loginquan',
+      // 'pages/table/loginquan',
       'pages/table/baba',
       'pages/table/attention',
       'pages/table/myme'

@@ -105,7 +105,7 @@
                 <view class="xiaopinhe" style="margin-left:20rpx;">
                   <!-- 内部详情 -->
                   <view class="liwulo">
-                    <van-icon size="30"  color="#FF7900" name="send-gift" />
+                    <van-icon size="30" color="#FF7900" name="send-gift" />
                   </view>
                   <view class="liyiya">聚好礼享中秋</view>
                   <view class="lierya">大闸蟹月饼0元拿</view>
