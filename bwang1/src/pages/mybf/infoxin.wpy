@@ -1,0 +1,127 @@
+<template>
+  <view class="maininfo">
+    <!-- 头部区域 -->
+    <view class="topinfo">
+      <view>头像</view>
+      <view class="xiabu">
+        <view class="tuee"></view>
+        <view style="margin-left:20rpx;">
+          <van-icon name="arrow" />
+        </view>
+      </view>
+    </view>
+    <!-- 二栏 -->
+    <!-- <van-cell title="单元格" is-link /> -->
+    <view class="erlan">
+      <van-cell size="large" title="昵称" value="肠子hhh" is-link border="false" />
+    </view>
+    <!-- 内容区域 -->
+    <view class="mainbutc">
+      <view class="comtop">
+        <van-cell size="large" title="性别" value="男" is-link border="false" />
+        <van-cell size="large" title="生日" value="2018-3-3" is-link border="false" />
+        <van-cell size="large" title="地区" value="武汉" is-link border="false" />
+      </view>
+      <view class="comtop">
+        <van-cell size="large" title="个性签名" value="品茶香，知茶趣;" is-link border="false" />
+        <van-cell size="large" title="绑定手机" value="156*****123" is-link border="false" />
+        <van-cell
+          size="large"
+          title="收货地址"
+          value="修改/添加"
+          is-link
+          border="false"
+          url="/pages/mybz/getdre"
+        />
+      </view>
+      <!-- 按钮区域 -->
+      <view class="butchu">退出登录</view>
+      <!-- 中栏 -->
+
+      <!-- <van-cell title="性别" value="男" is-link />
+        <van-cell title="生日" is-link value="2018-2-2" />
+      <van-cell title="地区" is-link value="南昌市" />-->
+      <!-- 下栏 -->
+      <!-- <view class="comtop">
+        <van-cell title="个性签名" value="品茶香，知茶趣;" is-link />
+        <van-cell title="绑定手机" is-link value="156*****123" />
+        <van-cell title="收货地址" is-link value="修改/添加" />
+      </view>
+      -->
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '我的资料'
+    // backgroundColor: '#eeeeee',
+  }
+}
+</script>
+
+<style lang="less">
+.maininfo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  .topinfo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 730rpx;
+    height: 150rpx;
+    border-bottom: 1rpx solid #ccc;
+    background-color: #fff;
+    .tuee {
+      width: 100rpx;
+      height: 100rpx;
+      background-color: #ddd;
+      border-radius: 50%;
+    }
+    .xiabu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 20rpx;
+    }
+  }
+  .erlan {
+    position: absolute;
+    top: 160rpx;
+    width: 100%;
+    height: 120rpx;
+  }
+  .mainbutc {
+    position: absolute;
+    top: 240rpx;
+    width: 100%;
+    height: 980rpx;
+    background-color: #eeeeee;
+    .comtop {
+      margin-top: 30rpx;
+      width: 100%;
+    }
+    .butchu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 150rpx;
+      width: 90%;
+      height: 100rpx;
+      background-color: #ff7900;
+      border-radius: 30rpx;
+      color: #fff;
+      line-height: 100rpx;
+      text-align: center;
+    }
+  }
+}
+</style>

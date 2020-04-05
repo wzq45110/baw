@@ -1,0 +1,751 @@
+<template>
+  <view class="baxmain">
+    <!-- 轮播图区域 -->
+    <swiper circular indicator-dots indicator-color="#ffffff" indicator-active-color="#FF7900">
+      <swiper-item wx:for="{{swiperbxList}}" wx:key="index">
+        <image src="{{item.image_src}}" />
+      </swiper-item>
+    </swiper>
+    <!-- 文字说明区域 -->
+    <view class="bawenzi">
+      <!-- 上区域 -->
+      <view class="textp">
+        <view style="font-size:40rpx;">
+          巨无霸双人汉堡
+          <van-icon name="cross" />30
+        </view>
+        <view style="color:#ccc; font-size:30rpx;">
+          <van-icon color="orange" size="28px" name="star-o" />
+        </view>
+      </view>
+      <!-- 右边区域 -->
+      <view class="wenzixia">
+        <view class="waibu">
+          <!-- <view class="shangbu">
+            <view>麦肯基西乡店</view>
+            <view class="zanan" style="font-size:20rpx;">赞助</view>
+          </view>-->
+          <view style="color:#ccc; font-size:30rpx;">9月2日10: 00 自动开奖</view>
+        </view>
+        <view style="font-size:28rpx;">
+          <text style="color:orange;">200</text>霸气值可兑
+        </view>
+      </view>
+    </view>
+    <!-- 整个内容区域 -->
+    <view class="zengbain">
+      <!-- 赞助商区域 -->
+      <view class="bazanin">
+        <!-- 头 -->
+        <view class="dayren">
+          <!-- <view class="diyiday">每日任务</view> -->
+          <view class="wenzih">
+            <view class="leftjia">赞助商信息</view>
+            <view class="logoqu">
+              <navigator url="/pages/bxqy/anzhu" hover-class="navigator-hover">我要赞助</navigator>
+            </view>
+          </view>
+        </view>
+        <!-- 身 -->
+        <view class="dianrei">
+          <view class="zuodinzhi">
+            <view>
+              肯德基(西乡店)
+              <van-tag round plain color="#FF7901" text-color="#FF7901" type="warning">+ 关注</van-tag>
+            </view>
+            <view style="font-size:24rpx; color:#717171;">深圳市罗湖区文锦路13号楼 3号 一侧吧</view>
+            <view style="font-size:20rpx; color:#ccc;">
+              <van-icon name="location-o" color="#FF7800" />
+              <van-icon name="arrow-left" />0.5km 离我最近
+            </view>
+          </view>
+          <view class="lineba"></view>
+          <view class="youbilo">
+            <van-icon name="phone-circle-o" size="40px" />
+          </view>
+        </view>
+        <!-- 尾 -->
+        <view>
+          <van-cell is-link title="查看全部246家分店" link-type="navigateTo" url="/pages/bxqy/fendan" />
+        </view>
+      </view>
+
+      <!--开奖结果与图介绍区域 -->
+      <view class="resultjie">
+        <van-tabs color="#FF7900" line-width="40" bind:click="onClick">
+          <van-tab title="开奖结果">
+            <!-- 内容一区域 -->
+            <view class="kaijiangyi">
+              <view class="tishibaiao">
+                恭喜, 你已中奖
+                <!-- <van-icon  color="#fff" name="clear" /> -->
+                <van-icon class="tutyutu" name="smile" color="#fff" />
+              </view>
+              <!-- 新增奖品说面栏 -->
+              <view class="zaicijiang">奖品: MAC 子弹头口红 (8色随机)</view>
+              <view class="zengerlan">
+                <view class="tongyang">
+                  <view>
+                    <van-icon size="30" color="#fff" name="eye" />
+                  </view>
+                  <view>查看兑奖码</view>
+                </view>
+                <view class="tongyangright">
+                  <view>
+                    <van-icon size="30" color="#FF7C09" name="cluster-o" />
+                  </view>
+                  <view>炫耀一下</view>
+                </view>
+              </view>
+
+              <!--小字 -->
+              <view class="xiaozihah">为你准备了如下福利</view>
+              <!-- 福利区域 -->
+              <view class="fulishang">
+                <view class="xiaopinhe" style="margin-left:20rpx;">
+                  <!-- 内部详情 -->
+                  <view class="liwulo">
+                    <van-icon size="30" color="#FF7900" name="send-gift" />
+                  </view>
+                  <view class="liyiya">聚好礼享中秋</view>
+                  <view class="lierya">大闸蟹月饼0元拿</view>
+                  <view class="lisanya">点击领取</view>
+                </view>
+                <view class="xiaopinhe" style="margin-right:20rpx; border:2rpx solid #CFCFCF;">
+                  <!-- 内部详情 -->
+                  <view class="liwulo">
+                    <!-- <image src /> -->
+                    <van-icon size="30" color="#ccc" name="gift" />
+                  </view>
+                  <view class="liyiya">抽奖助手送给 奔跑的老王</view>
+                  <view class="lierya">大闸蟹月饼0元拿</view>
+                  <view class="lisanya" style="background-color: #ccc;">点击查看</view>
+                </view>
+              </view>
+              <!--标题 -->
+              <view class="ziziii">中 奖 者 名 单</view>
+
+              <!-- 名单详情区域 -->
+              <view class="listquyu">
+                <view class="shangzhe">
+                  奖品: MAC 口红任意色号一支
+                  <van-icon color="#FF7900" name="cross" />
+                  <text style="color:#FF7900">3名</text>
+                </view>
+                <view class="xiazhe">
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                </view>
+              </view>
+              <!-- 2栏 -->
+              <view class="listquyu" style="top:1300rpx;">
+                <view class="shangzhe">
+                  奖品: MAC 口红任意色号一支
+                  <van-icon color="#FF7900" name="cross" />
+                  <text style="color:#FF7900">3名</text>
+                </view>
+                <view class="xiazhe">
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                  <view class="hfjkg">
+                    <view class="tutughjy"></view>
+                    <view>小红</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </van-tab>
+          <van-tab title="图文介绍">内容 2</van-tab>
+        </van-tabs>
+      </view>
+
+      <!--图文区域 -->
+      <view class="tuwenbain">
+        <!-- <view class="htou">团购详情及文字说明部分</view>
+        <view class="zxjg">有效期文字内容</view>
+        <view class="zxjg">当天营业时间</view>
+        <view class="zxjg">使用规则~~~~~~</view>-->
+        <!-- 点击按钮 -->
+        <!-- <view class="niubj"> -->
+        <!-- <view class="haojiang" style="margin-left:120rpx;">抽 奖</view>
+        <view class="haojiang" style="margin-right:120rpx;">保 中</view>-->
+        <!-- <button @tap="showPopupjia" class="haojiang" style="margin-left:150rpx;">抽 奖</button>
+          <button @tap="showPopup" class="haojiang" style="margin-right:150rpx;">保 中</button>
+        </view>-->
+
+        <!-- 小文字 -->
+        <view class="xiaowenz">
+          感谢
+          <text style="color:#FF7902;">18767</text>人参与, 查看全部
+          <van-icon name="arrow" />
+        </view>
+        <!-- 头像区域 -->
+        <view class="peopletu">
+          <view class="xiaobio" style="margin-left:200rpx;">
+            <image src="../../assets/images/people.png" />
+          </view>
+          <view class="xiaobio">
+            <image src="../../assets/images/people.png" />
+          </view>
+          <view class="xiaobio">
+            <image src="../../assets/images/people.png" />
+          </view>
+          <view class="xiaobio" style="margin-right:200rpx;">
+            <image src="../../assets/images/people.png" />
+          </view>
+        </view>
+      </view>
+      <!-- 评论区域 -->
+      <view class="huawrite">
+        <!-- 顶 -->
+        <view class="caipin">
+          <view class="xiaolun">精彩评论</view>
+          <view class="pinlun">
+            写评论
+            <van-icon name="arrow" color="green" />
+          </view>
+        </view>
+        <!-- 内容 -->
+        <view class="writeneijing" wx:for="{{3}}" wx:key="index">
+          <view class="shangbanjie">
+            <view class="renxiang">
+              <image src="../../assets/images/people.png" />
+            </view>
+            <view class="youxiangxi">
+              <view style="color:#B0B0B0; font-size:30rpx;">团队详情及文字说明部分</view>
+              <view style="color:#FD7900; font-size:26rpx;">
+                <van-icon color="#FD7900" name="good-job-o" />
+                <text>228</text>
+              </view>
+            </view>
+          </view>
+          <!-- 具体内容 -->
+          <view style="font-size:24rpx;">使用规则~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~讲故事的空间打开洒过的口号是v的</view>
+        </view>
+      </view>
+    </view>
+    <!-- 弹出层 保中成功内容 -->
+    <van-popup show="{{ shwl }}" bind:close="onClose" round closeable close-icon="close">
+      <view class="gongsucess">
+        <view class="shangsuche">恭喜, 保中成功</view>
+        <view class="jingdeng">静等开奖吧！</view>
+        <view class="guanzhgugg">
+          关注《
+          <text style="color:#ff9131">深圳霸王到</text>》公众号
+        </view>
+        <view class="tongzhi">获取最新霸王餐信息，不错过中奖通知。</view>
+        <!--二维码区域 -->
+        <view class="weimam">
+          <image src="../../assets/images/erma.png" />
+        </view>
+        <view class="xiaxiao">扫一扫关注公众号</view>
+      </view>
+    </van-popup>
+    <!-- 弹出层 保中失败内容 -->
+    <van-popup show="{{show }}" bind:close="onClose" round closeable close-icon="close">
+      <view class="gongsucess" style="border:10rpx solid #CCCECE;">
+        <view class="shangsuche" style="color:#666666">遗憾, 保中失败</view>
+        <view class="xinjiaba">抱歉,你的霸气值不足,无法保中</view>
+        <view class="jingdeng" style="top:150rpx">
+          去获取霸气值
+          <van-icon name="arrow" color="#ff9131" />
+        </view>
+        <view class="guanzhgugg">
+          关注《
+          <text style="color:#ff9131">深圳霸王到</text>》公众号
+        </view>
+        <view class="tongzhi">获取最新霸王餐信息，不错过中奖通知。</view>
+        <!--二维码区域 -->
+        <view class="weimam">
+          <image src="../../assets/images/erma.png" />
+        </view>
+        <view class="xiaxiao">扫一扫关注公众号</view>
+      </view>
+    </van-popup>
+    <!-- 弹出层 抽奖参与成功 -->
+    <van-popup show="{{showw}}" bind:close="onClose" round closeable close-icon="close">
+      <view class="gongsucess">
+        <view
+          class="shangsuche"
+          style="background-color:#ff7900; width: 70%; color:#ffffff; border-radius:20rpx;"
+        >参与成功</view>
+        <view class="guanzhgugg">
+          关注《
+          <text style="color:#ff9131">深圳霸王到</text>》公众号
+        </view>
+        <view class="tongzhi">获取最新霸王餐信息，不错过中奖通知。</view>
+        <!--二维码区域 -->
+        <view class="weimam">
+          <image src="../../assets/images/erma.png" />
+        </view>
+        <view class="xiaxiao">扫一扫关注公众号</view>
+      </view>
+    </van-popup>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '霸王详情'
+    // backgroundColor: '#eeeeee',
+  }
+  data = {
+    // 轮播图数据
+    swiperbxList: [
+      { image_src: '../../assets/images/logoo_02.png' },
+      { image_src: '../../assets/images/logoo_02.png' },
+      { image_src: '../../assets/images/logoo_02.png' }
+    ],
+    show: false,
+    shwl: false,
+    showw: false
+  }
+  methods = {
+    // 触发显示
+    showPopup() {
+      this.show = true
+    },
+    showPopupjia() {
+      this.showw = true
+    },
+    // 关闭弹出层
+    onClose() {
+      this.show = this.showw = false
+    }
+  }
+}
+</script>
+<style lang="less">
+.baxmain {
+  width: 100%;
+  height: 100%;
+  swiper {
+    height: 350rpx;
+    image {
+      height: 100%;
+      width: 750rpx;
+    }
+  }
+  .bawenzi {
+    margin-top: 40rpx;
+  }
+  .wenzixia,
+  .textp {
+    padding: 0 35rpx;
+  }
+  .wenzixia,
+  .textp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10rpx;
+  }
+  .zengbain {
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    padding-top: 30rpx;
+    // 新增区域
+    .resultjie {
+      width: 100%;
+      background-color: #fff;
+      margin-top: 30rpx;
+      .kaijiangyi {
+        position: relative;
+        width: 100%;
+        height: 1650rpx;
+        // background-color: pink;
+        .zaicijiang,
+        .ziziii,
+        .xiaozihah,
+        .tishibaiao {
+          position: absolute;
+          height: 80rpx;
+          line-height: 80rpx;
+          text-align: center;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        .tishibaiao {
+          width: 58%;
+          color: #fff;
+          font-weight: 900;
+          background-color: #ff7900;
+          border-radius: 40rpx;
+          top: 60rpx;
+        }
+        .zaicijiang {
+          top: 137rpx;
+          width: 100%;
+          color: #adadad;
+          font-size: 28rpx;
+        }
+        .zengerlan {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          position: absolute;
+          top: 216rpx;
+          width: 100%;
+          height: 200rpx;
+          // background-color: pink;
+          .tongyangright,
+          .tongyang {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 340rpx;
+            height: 180rpx;
+            border-radius: 20rpx;
+            font-size: 30rpx;
+          }
+          .tongyang {
+            background-color: #ff7900;
+            color: #fff;
+          }
+          .tongyangright {
+            color: #ff7900;
+            border: 2rpx solid #ff7900;
+          }
+        }
+        .xiaozihah {
+          font-size: 28rpx;
+          color: #adadad;
+          top: 422rpx;
+        }
+        .fulishang {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          position: absolute;
+          top: 504rpx;
+          width: 100%;
+          height: 350rpx;
+          // background-color: green;
+          .xiaopinhe {
+            position: relative;
+            width: 345rpx;
+            height: 345rpx;
+            border: 2rpx solid #ffbb80;
+            border-radius: 20rpx;
+            .lisanya,
+            .lierya,
+            .liyiya,
+            .liwulo {
+              position: absolute;
+              left: 20rpx;
+            }
+            .liwulo {
+              top: 20rpx;
+              width: 50rpx;
+              height: 50rpx;
+              border-radius: 50%;
+            }
+            .liyiya {
+              top: 98rpx;
+              width: 80%;
+              font-size: 20rpx;
+              color: #ccc;
+            }
+            .lierya {
+              top: 145rpx;
+              width: 80%;
+              font-size: 30rpx;
+            }
+            .lisanya {
+              bottom: 30rpx;
+              width: 80%;
+              height: 50rpx;
+              line-height: 50rpx;
+              text-align: center;
+              background-color: #ff7900;
+              border-radius: 20rpx;
+              color: #fff;
+              font-size: 20rpx;
+            }
+          }
+        }
+        .ziziii {
+          top: 864rpx;
+          font-weight: 700;
+          font-size: 30rpx;
+        }
+        .listquyu {
+          position: absolute;
+          top: 955rpx;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 92%;
+          height: 300rpx;
+          // background-color: green;
+          border: 4rpx solid #ccc;
+          border-radius: 20rpx;
+          .shangzhe {
+            border-radius: 20rpx 20rpx 0 0;
+            width: 100%;
+            height: 80rpx;
+            line-height: 80rpx;
+            font-size: 28rpx;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          .xiazhe {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 200rpx;
+            font-size: 28rpx;
+            text-align: center;
+            // background-color: yellow;
+            .hfjkg {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              align-items: center;
+              width: 150rpx;
+              height: 150rpx;
+              background-color: #fff;
+              .tutughjy {
+                width: 80rpx;
+                height: 80rpx;
+                border-radius: 50%;
+                background-color: pink;
+              }
+            }
+          }
+        }
+      }
+    }
+    .bazanin {
+      width: 100%;
+      height: 400rpx;
+      background-color: #fff;
+      .dayren {
+        width: 100%;
+        // height: 200rpx;
+        background-color: #fff;
+        .wenzih {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          height: 120rpx;
+          border-bottom: 1rpx solid #eeeeee;
+          .logoqu {
+            background-color: #ff7900;
+            color: #fff;
+            font-size: 28rpx;
+            height: 70rpx;
+            line-height: 70rpx;
+            text-align: center;
+            width: 180rpx;
+            border-radius: 30rpx;
+            margin-right: 35rpx;
+          }
+          .leftjia {
+            font-size: 28rpx;
+            margin-left: 30rpx;
+          }
+        }
+      }
+      .dianrei {
+        position: relative;
+        width: 100%;
+        height: 200rpx;
+        border-bottom: 1rpx solid #eee;
+        .zuodinzhi,
+        .lineba,
+        .youbilo {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        .zuodinzhi {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          left: 30rpx;
+          height: 150rpx;
+          width: 60%;
+        }
+        .lineba {
+          width: 1rpx;
+          height: 100rpx;
+          background-color: #ccc;
+          right: 220rpx;
+        }
+        .youbilo {
+          right: 70rpx;
+        }
+      }
+    }
+    .tuwenbain {
+      margin-top: 30rpx;
+      background-color: #fff;
+      width: 100%;
+      //   height: 600rpx;
+      .xiaowenz {
+        width: 100%;
+        height: 80rpx;
+        line-height: 80rpx;
+        text-align: center;
+        font-size: 28rpx;
+        color: #9a9a9a;
+      }
+      .peopletu {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 100rpx;
+        .xiaobio {
+          width: 50rpx;
+          height: 50rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .huawrite {
+      width: 100%;
+      background-color: #fff;
+      .caipin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100rpx;
+        .xiaolun {
+          margin-left: 20rpx;
+        }
+        .pinlun {
+          margin-right: 20rpx;
+          color: green;
+          font-size: 28rpx;
+        }
+      }
+    }
+    .writeneijing {
+      width: 100%;
+      background-color: #fff;
+      .shangbanjie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50rpx;
+        .renxiang {
+          margin-left: 20rpx;
+          width: 60rpx;
+          height: 60rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .youxiangxi {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 600rpx;
+          height: 60rpx;
+          margin-right: 20rpx;
+        }
+      }
+    }
+  }
+  // 保中成功区域
+  .gongsucess {
+    position: relative;
+    width: 600rpx;
+    height: 700rpx;
+    border: 10rpx solid #ff9131;
+    border-radius: 40rpx;
+    .shangsuche,
+    .jingdeng,
+    .guanzhgugg,
+    .tongzhi,
+    .weimam,
+    .xiaxiao,
+    .xinjiaba {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    // 失败
+    .xinjiaba {
+      width: 80%;
+      height: 50rpx;
+      text-align: center;
+      font-size: 30rpx;
+      top: 100rpx;
+      color: #9a9a9a;
+    }
+    .xiaxiao {
+      bottom: 15rpx;
+      font-size: 24rpx;
+      // color: #ccc;
+    }
+    .tongzhi {
+      top: 250rpx;
+      font-size: 26rpx;
+      width: 90%;
+      height: 30rpx;
+      text-align: center;
+    }
+    .guanzhgugg {
+      width: 90%;
+      height: 30rpx;
+      text-align: center;
+      top: 200rpx;
+      font-size: 26rpx;
+    }
+    .shangsuche {
+      top: 30rpx;
+      color: #ff7900;
+      width: 80%;
+      height: 70rpx;
+      line-height: 70rpx;
+      text-align: center;
+      font-size: 50rpx;
+      font-weight: 900;
+    }
+    .jingdeng {
+      top: 120rpx;
+      color: #ff7900;
+      font-size: 30rpx;
+      font-weight: 700;
+    }
+    .weimam {
+      bottom: 75rpx;
+      width: 300rpx;
+      height: 300rpx;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+</style>

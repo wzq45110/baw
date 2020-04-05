@@ -1,0 +1,152 @@
+<style lang="less">
+</style>
+
+<script>
+import wepy from 'wepy'
+import 'wepy-async-function'
+export default class extends wepy.app {
+  config = {
+    pages: [
+      // 底部tab栏
+      'pages/table/loginquan',
+      'pages/table/baba',
+      'pages/table/attention',
+      'pages/table/myme'
+      // 我的保中页面
+      // 'pages/mybz/confirmed',
+      // // 我的资料页面
+      // 'pages/mybz/infoxin'
+      // // 霸气值页面
+      // 'pages/mybz/hotstore',
+      // // 推荐有奖页面
+      // 'pages/mybz/warn',
+      // // 收货地址页面
+      // 'pages/mybz/getdre',
+      // // 新增地址页面
+      // 'pages/mybz/newdre',
+      // // 新增霸王详情页面
+      // 'pages/bxqy/bainfo',
+      // // 我要anzhu 页面
+      // 'pages/bxqy/anzhu',
+      // // 分店页面
+      // 'pages/bxqy/fendan',
+      // // 商户页面
+      // 'pages/mybz/shanghu',
+      // // 内容页面
+      // 'pages/bxqy/bletter',
+      // // 中奖填写地址
+      // 'pages/bxqy/activede',
+      // // 中将填写兑奖
+      // 'pages/bxqy/activedui',
+      // // 已中奖
+      // 'pages/bxqy/activez',
+      // 'pages/bxqy/activew'
+    ],
+    // 配置分包加载
+    subPackages: [
+      {
+        root: 'pages/bxfb',
+        pages: ['activew', 'activez', 'activedui', 'activede']
+      },
+      {
+        root: 'pages/mybz',
+        pages: ['getdre', 'newdre', 'shanghu']
+      },
+      {
+        root: 'pages/mybf',
+        pages: ['confirmed', 'infoxin', 'hotstore', 'warn']
+      },
+      {
+        root: 'pages/bxqy',
+        pages: ['bletter', 'anzhu', 'bainfo', 'fendan']
+      }
+    ],
+    window: {
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#FF7900',
+      navigationBarTitleText: '霸王到',
+      navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      // 选中的文本颜色
+      selectedColor: '#FF8D29',
+      // 所有 tabBar 节点的配置数组
+      list: [
+        {
+          // 页面路径
+          pagePath: 'pages/table/baba',
+          // 显示的文本
+          text: '',
+          // 默认图标路径
+          iconPath: '/assets/font-icon/ba.png',
+          // 选中之后的图标路径
+          selectedIconPath: '/assets/font-icon/ba.png'
+          // 导航栏标题内容
+          // navigationBarTitleText：'首页'
+        },
+        {
+          pagePath: 'pages/table/attention',
+          text: '关注',
+          iconPath: '/assets/font-icon/attention.png',
+          selectedIconPath: '/assets/font-icon/attentionactive.png'
+        },
+        {
+          pagePath: 'pages/table/myme',
+          text: '我的',
+          iconPath: '/assets/font-icon/me.png',
+          selectedIconPath: '/assets/font-icon/meactive.png'
+          // navigationBarTitleText：'我的'
+        }
+      ]
+    },
+    // 引入并全局注册组件
+    usingComponents: {
+      'van-row': './assets/vant/row/index',
+      'van-col': './assets/vant/col/index',
+      // 图标
+      'van-icon': './assets/vant/icon/index',
+      // 搜索
+      'van-search': './assets/vant/search/index',
+      // 按钮
+      'van-button': './assets/vant/button/index',
+      // 弹出层
+      'van-popup': './assets/vant/popup/index',
+      // grid宫格
+      'van-grid': './assets/vant/grid/index',
+      'van-grid-item': './assets/vant/grid-item/index',
+      // 单元格
+      'van-cell': './assets/vant/cell/index',
+      'van-cell-group': './assets/vant/cell-group/index',
+      // 分割线
+      'van-divider': './assets/vant/divider/index',
+      // switch开关
+      'van-switch': './assets/vant/switch/index',
+      // 步骤条
+      'van-steps': './assets/vant/steps/index',
+      // 单选框
+      'van-radio': './assets/vant/radio/index',
+      'van-radio-group': './assets/vant/radio-group/index',
+      // tag标签
+      'van-tag': './assets/vant/tag/index',
+      // 输入框
+      'van-field': './assets/vant/field/index',
+      // tab 标签页面
+      'van-tab': './assets/vant/tab/index',
+      'van-tabs': './assets/vant/tabs/index'
+    }
+  }
+
+  globalData = {
+    userInfo: null
+  }
+
+  constructor() {
+    super()
+    this.use('requestfix')
+  }
+
+  onLaunch() {
+    console.log('小程序启动了')
+  }
+}
+</script>

@@ -1,0 +1,113 @@
+<template>
+  <view class="shoudimain">
+    <!-- 具体内容 -->
+    <view class="morendre" wx:for="{{list1}}" wx:key="index">
+      <!-- 隔条 -->
+      <view class="tiaoge"></view>
+      <view>
+        <van-cell title="包小花" value="13756433298" size="large" label="上海市浦东新区张家玮电子1号楼201室" />
+        <view class="biande">
+          <!-- 左侧 -->
+          <view class="leftzuo" @tap="colorbian">
+            <view class="kuangtu" style="background-color:{{color}}; border:{{borde}}">
+              <van-icon color="white" name="success" />
+            </view>
+            <view class="fontzi" style="color:{{color}}">默认地址</view>
+          </view>
+          <!-- 右侧 -->
+          <view class="biandeadd">
+            <view class="tuleft">
+              <van-icon name="edit" />编辑
+            </view>
+            <view class="turight">
+              <van-icon name="delete" />删除
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 底部按钮 -->
+    <view class="dianniu" @tap="newdrem">新增收货地址</view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '收获地址'
+    // backgroundColor: '#eeeeee',
+  }
+  data = {
+    color: 'orange',
+    borde: 'none',
+    list1: [1, 2]
+  }
+  methods = {
+    colorbian() {
+      this.color = !this.color
+      this.borde = !this.borde
+    },
+    newdrem() {
+      wepy.navigateTo({
+        url: '/pages/mybz/newdre'
+      })
+    }
+  }
+}
+</script>
+<style lang="less">
+.shoudimain {
+  width: 100%;
+  height: 100%;
+  .morendre {
+    width: 100%;
+    height: 300rpx;
+    // background-color: pink;
+    .tiaoge {
+      width: 100%;
+      height: 40rpx;
+      background-color: #f1f1f1;
+    }
+    .biande {
+      width: 100%;
+      height: 100rpx;
+      //   background-color: green;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .leftzuo,
+      .biandeadd {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+        font-size: 24rpx;
+      }
+      .leftzuo {
+        margin-left: 30rpx;
+        width: 140rpx;
+        .kuangtu {
+          width: 30rpx;
+          height: 30rpx;
+          border: 2rpx solid #ccc;
+        }
+      }
+      .biandeadd {
+        width: 220rpx;
+        margin-right: 30rpx;
+      }
+    }
+  }
+  .dianniu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    background-color: #ff7900;
+    line-height: 100rpx;
+    text-align: center;
+    color: #ffffff;
+  }
+}
+</style>

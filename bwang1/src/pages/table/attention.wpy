@@ -1,0 +1,278 @@
+<template>
+  <view class="guanzhumain">
+    <view class="shangguan">
+      <navigator url="/pages/mybz/shanghu" hover-class="none" wx:for="{{3}}" wx:key="index">
+        <view class="tulogo">
+          <image src="../../assets/images/oppo.png" />
+        </view>
+      </navigator>
+      <!-- <view class="tulogo">
+        <image src="../../assets/images/oppo.png" />
+      </view>
+      <view class="tulogo">
+        <image src="../../assets/images/oppo.png" />
+      </view> -->
+    </view>
+    <!-- 卡片区域 -->
+    <view class="crsadmain">
+      <view class="neicar">
+        <!-- 内容区域 1-->
+        <view class="wepjiang">
+          <!-- 图片区域 -->
+          <view class="pic">
+            <image src="../../assets/images/logoo1_02.png" />
+          </view>
+          <!-- 文字区域 -->
+          <view class="textp">
+            <view style="font-size:40rpx;">
+              巨无霸双人汉堡
+              <van-icon name="cross" />30
+            </view>
+            <view style="color:#ccc; font-size:30rpx;">
+              <van-icon color="orange" name="location-o" />
+              <van-icon name="arrow-left" />500
+            </view>
+          </view>
+          <!-- 文字区域2 -->
+          <view class="wenzixia">
+            <view class="waibu">
+              <view class="shangbu">
+                <view>麦肯基西乡店</view>
+                <view class="zanan" style="font-size:20rpx;">
+                  <navigator url="/pages/bxqy/anzhu" hover-class="navigator-hover">赞助</navigator>
+                </view>
+              </view>
+              <view style="color:#ccc; font-size:30rpx;">9月2日10: 00 自动开奖</view>
+            </view>
+            <view class="anniuniu" @tap="quebawang">
+              <!-- <van-button color="orange" round type="info">参与</van-button> -->
+              参与
+            </view>
+          </view>
+        </view>
+        <!-- 内容区域2 -->
+        <view class="tianhong">
+          <view class="shnagtian">
+            <view class="lefttulo">
+              <image src="../../assets/images/hong.png" />
+            </view>
+            <view style="margin-right:20rpx; font-size:20rpx; color:#ccc;">一小时前</view>
+          </view>
+          <view class="tucare">
+            <view class="tucarekk">
+              <image src="../../assets/images/opp.png" />
+            </view>
+            <view class="shuomin">
+              <view>天虹购物中心周年庆典 全场8折</view>
+              <view>活动时间9月1日-9月7日</view>
+            </view>
+          </view>
+        </view>
+        <!-- 内容三 同区域1 -->
+        <view class="wepjiang">
+          <!-- 图片区域 -->
+          <view class="pic">
+            <image src="../../assets/images/logoo_02.png" />
+          </view>
+          <!-- 文字区域 -->
+          <view class="textp">
+            <view style="font-size:40rpx;">
+              巨无霸双人汉堡
+              <van-icon name="cross" />30
+            </view>
+            <view style="color:#ccc; font-size:30rpx;">
+              <van-icon color="orange" name="location-o" />
+              <van-icon name="arrow-left" />500
+            </view>
+          </view>
+          <!-- 文字区域2 -->
+          <view class="wenzixia">
+            <view class="waibu">
+              <view class="shangbu">
+                <view>麦肯基西乡店</view>
+                <view class="zanan" style="font-size:20rpx;">
+                  <navigator url="/pages/bxqy/anzhu" hover-class="navigator-hover">赞助</navigator>
+                </view>
+              </view>
+              <view style="color:#ccc; font-size:30rpx;">9月2日10: 00 自动开奖</view>
+            </view>
+            <view class="anniuniu" @tap="quebawang">
+              <!-- <van-button color="orange" round type="info">参与</van-button> -->
+              参与
+            </view>
+          </view>
+        </view>
+        <!-- 内容四 同区域2 -->
+        <view class="tianhong">
+          <view class="shnagtian">
+            <view class="lefttulo">
+              <image src="../../assets/images/oppo.png" />
+            </view>
+            <view style="margin-right:20rpx; font-size:20rpx; color:#ccc;">昨天</view>
+          </view>
+          <view class="tucare">
+            <view class="tucarekk">
+              <image src="../../assets/images/opp.png" />
+            </view>
+            <view class="shuomin">
+              <view>oppo手机上新季</view>
+              <view>点击进入领取百元代金券</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '关注'
+    // backgroundColor: '#eeeeee',
+  }
+  methods = {
+    quebawang() {
+      wx.navigateTo({
+        url: '/pages/bxqy/bainfo'
+      })
+    }
+  }
+}
+</script>
+
+<style lang="less">
+.guanzhumain {
+  width: 100%;
+  height: 100%;
+  .shangguan {
+    width: 100%;
+    height: 200rpx;
+    // background-color: pink;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20rpx;
+    .tulogo {
+      border-radius: 50%;
+      border: 10rpx solid #fed6b3;
+      width: 120rpx;
+      height: 120rpx;
+      margin-left: 30rpx;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .crsadmain {
+    width: 100%;
+    height: 600rpx;
+    background-color: #eee;
+    padding-top: 20rpx;
+    .neicar {
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      padding-top: 10rpx;
+      .wepjiang {
+        margin-top: 40rpx;
+        border-bottom: 1rpx solid #ccc;
+        padding-bottom: 30rpx;
+      }
+      .pic {
+        margin-bottom: 30rpx;
+        height: 350rpx;
+        image {
+          height: 100%;
+          width: 750rpx;
+        }
+      }
+      .wenzixia .anniuniu {
+        width: 120rpx;
+        height: 60rpx;
+        line-height: 60rpx;
+        text-align: center;
+        background-color: #ff7900;
+        border-radius: 20rpx;
+        color: #fff;
+        font-size: 26rpx;
+      }
+      .wenzixia,
+      .textp {
+        padding: 0 35rpx;
+      }
+      .wenzixia,
+      .textp,
+      .shangbu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10rpx;
+      }
+
+      .zanan {
+        width: 60rpx;
+        height: 30rpx;
+        line-height: 30rpx;
+        text-align: center;
+        background-color: #fff;
+        border: 1rpx solid #ff7900;
+        color: #ff7900;
+        border-radius: 10rpx;
+      }
+      .tianhong {
+        width: 100%;
+        height: 600rpx;
+        border-bottom: 1rpx solid #ccc;
+        .shnagtian {
+          width: 100%;
+          height: 200rpx;
+          // background-color: pink;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .lefttulo {
+            margin-left: 20rpx;
+            width: 120rpx;
+            height: 120rpx;
+            image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+        .tucare {
+          position: relative;
+          width: 100%;
+          height: 600rpx;
+          .tucarekk {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            width: 95%;
+            height: 350rpx;
+            image {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .shuomin {
+            position: absolute;
+            left: 34rpx;
+            top: 254rpx;
+            width: 95%;
+            height: 50rpx;
+            z-index: 100;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

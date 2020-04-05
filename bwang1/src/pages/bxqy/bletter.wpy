@@ -1,0 +1,170 @@
+<template>
+  <view class="mainbltter">
+    <!-- 标题 -->
+    <view class="titlebete">
+      巨无霸双人堡套餐
+      <van-icon name="cross" />30
+    </view>
+    <view class="yuanchaun">原创: 你兽爷 兽楼处 今天</view>
+    <!-- 文章内容区域 -->
+
+    <view
+      class="bookmain"
+    >说美食，界定有歧义。南美亚马逊流域有一种虫子，面目狰狞，浑身粘液，外人视为恶物，当地人却奉为美食。再如幼鼠，多数人心存敌意，但广东沿海一带却有人嗜好“三吱溜”，即把浑身通红无毛的幼鼠用筷子夹起，幼鼠“吱吱”乱叫，是谓“一吱溜”；再把幼鼠放入盛有由葱、姜、蒜、醋、糖、油等配制的调料盅内一涮，幼鼠再叫，谓之“二吱溜”；最后食客将幼鼠送入口中一咬，幼鼠狂叫，这就是闻名于南方食客中的“三吱溜”！相信这样的场面，在多数人看来不止是恶心，更是恐怖！但对于喜好此菜的人来讲，却是美味。因而这“美食”之意，也就因人而异，因地而异。家母在世时，曾对我说过这样的俗语：“饿时糠也甜，饱时肉也粘黏。”</view>
+
+    <!--发布时间 -->
+    <view class="bushijian">本文发布于2019-09-09</view>
+    <view class="dibulan">
+      <view>阅读 10万+</view>
+      <view>
+        <van-icon color="#FF7900" name="browsing-history" />在看 558
+      </view>
+    </view>
+    <!--评论区域 -->
+    <view class="zuipin">
+      <view class="huawrite">
+        <!-- 顶 -->
+        <view class="caipin">
+          <view class="xiaolun">精彩评论</view>
+          <view class="pinlun">
+            写留言
+            <van-icon name="arrow" />
+          </view>
+        </view>
+        <!-- 内容 -->
+        <view class="writeneijing" wx:for="{{4}}" wx:key="index">
+          <view class="shangbanjie">
+            <view class="renxiang">
+              <image src="../../assets/images/people.png" />
+            </view>
+            <view class="youxiangxi">
+              <view style="color:#B0B0B0; font-size:30rpx;">团队详情及文字说明部分</view>
+              <view style="color:#FD7900; font-size:26rpx;">
+                <van-icon color="#FD7900" name="good-job-o" />
+                <text>228</text>
+              </view>
+            </view>
+          </view>
+          <!-- 具体内容 -->
+          <view style="font-size:24rpx;">使用规则~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~讲故事的空间打开洒过的口号是v的</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '内容页'
+    // backgroundColor: '#eeeeee',
+  }
+}
+</script>
+<style lang="less" scoped>
+.mainbltter {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .titlebete {
+    position: absolute;
+    left: 20rpx;
+    top: 30rpx;
+    width: 80%;
+    height: 50rpx;
+    font-size: 50rpx;
+    font-weight: 900;
+  }
+  .yuanchaun {
+    width: 100%;
+    left: 20rpx;
+    top: 109rpx;
+  }
+  .yuanchaun,
+  .bushijian {
+    position: absolute;
+    color: #999999;
+    font-size: 30rpx;
+  }
+  .bookmain,
+  .dibulan {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 94%;
+    color: #999999;
+    font-size: 30rpx;
+  }
+
+  .bookmain {
+    height: 600rpx;
+    top: 176rpx;
+  }
+  .bushijian {
+    width: 80%;
+    left: 20rpx;
+    top: 789rpx;
+  }
+  .dibulan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1rpx solid #eee;
+    height: 100rpx;
+    top: 820rpx;
+  }
+  .zuipin {
+    position: absolute;
+    width: 98%;
+    top: 900rpx;
+    .huawrite {
+      width: 100%;
+      background-color: #fff;
+      .caipin {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100rpx;
+        .xiaolun {
+          margin-left: 20rpx;
+        }
+        .pinlun {
+          margin-right: 20rpx;
+          // color: green;
+          font-size: 28rpx;
+        }
+      }
+    }
+    .writeneijing {
+      width: 100%;
+      background-color: #fff;
+      .shangbanjie {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50rpx;
+        .renxiang {
+          margin-left: 20rpx;
+          width: 60rpx;
+          height: 60rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .youxiangxi {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 600rpx;
+          height: 60rpx;
+          margin-right: 20rpx;
+        }
+      }
+    }
+  }
+}
+</style>

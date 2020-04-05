@@ -1,0 +1,280 @@
+<template>
+  <view class="mainsdhanghu">
+    <!-- 顶部区域 -->
+    <view class="wenzih">
+      <view class="leftjia">
+        <view class="tufendan">
+          <image src="../../assets/images/oppo.png" />
+        </view>麦肯基西乡店
+      </view>
+      <view class="logoqu">取消关注</view>
+    </view>
+    <!-- 地址商家烂 -->
+    <view class="bazanin">
+      <!-- 身 -->
+      <view class="dianrei">
+        <view class="zuodinzhi">
+          <!-- <view>
+            肯德基(西乡店)
+            <van-tag round plain color="#FF7901" text-color="#FF7901" type="warning">+ 关注</van-tag>
+          </view>-->
+          <view style="font-size:24rpx; color:#717171;">深圳市罗湖区文锦路13号楼 3号 一侧吧</view>
+          <view style="font-size:20rpx; color:#ccc;">
+            <van-icon name="location-o" color="#FF7800" />
+            <van-icon name="arrow-left" />0.5km 离我最近
+          </view>
+        </view>
+        <view class="lineba"></view>
+        <view class="youbilo">
+          <van-icon name="phone-circle-o" size="40px" />
+        </view>
+      </view>
+      <!-- 尾 -->
+      <view>
+        <van-cell is-link title="查看全部246家分店" link-type="navigateTo" url="/pages/bxqy/fendan" />
+      </view>
+    </view>
+    <!-- 内容区域栏目一 -->
+    <view class="waitianev">
+      <view class="carli">
+        <view class="picc">
+          <image src="../../assets/images/zhong.png" />
+        </view>
+        <view class="cenhan">
+          <view class="shaung">
+            巨无霸双人堡套餐
+            <van-icon name="cross" />30
+          </view>
+          <view>9月2日10: 00自动开奖</view>
+        </view>
+
+        <view class="rightyou">
+          <navigator url="/pages/bxqy/bainfo" hover-class="navigator-hover">去看看</navigator>
+        </view>
+      </view>
+    </view>
+    <!--  -->
+    <view class="dibushuo">一小时前</view>
+    <!-- 内容栏目二 其他商家 -->
+    <view class="baoguo" wx:for="{{3}}" wx:key="index">
+      <view class="tianhong">
+        <!-- <view class="shnagtian">
+          <view class="lefttulo">
+            <image src="../../assets/images/hong.png" />
+          </view>
+          <view style="margin-right:20rpx; font-size:20rpx; color:#ccc;">一小时前</view>
+        </view>-->
+        <view class="tucare">
+          <view class="tucarekk">
+            <image src="../../assets/images/opp.png" />
+          </view>
+          <view class="shuomin">
+            <view>六一儿童节</view>
+            <view>麦肯基送你儿童节礼物一份</view>
+          </view>
+        </view>
+      </view>
+      <view class="dibushuo">昨天 10:00</view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '关注'
+    // backgroundColor: '#eeeeee',
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.mainsdhanghu {
+  height: 100%;
+  width: 100%;
+  background-color: #eeeeee;
+  .wenzih {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 200rpx;
+    border-bottom: 1rpx solid #eeeeee;
+    background-color: #fff;
+    .logoqu {
+      background-color: #ff7900;
+      color: #fff;
+      font-size: 28rpx;
+      height: 70rpx;
+      line-height: 70rpx;
+      text-align: center;
+      width: 180rpx;
+      border-radius: 30rpx;
+      margin-right: 35rpx;
+    }
+    .leftjia {
+      font-size: 60rpx;
+      font-weight: 700;
+      width: 300rpx;
+      height: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 28rpx;
+      margin-left: 30rpx;
+      .tufendan {
+        width: 80rpx;
+        height: 80rpx;
+        border: 10rpx solid #fed6b1;
+        border-radius: 50%;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .bazanin {
+    width: 100%;
+    height: 280rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    .dianrei {
+      position: relative;
+      width: 100%;
+      height: 200rpx;
+      border-bottom: 1rpx solid #eee;
+      .zuodinzhi,
+      .lineba,
+      .youbilo {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .zuodinzhi {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        left: 30rpx;
+        height: 150rpx;
+        width: 60%;
+      }
+      .lineba {
+        width: 2rpx;
+        height: 100rpx;
+        background-color: #999999;
+        right: 220rpx;
+      }
+      .youbilo {
+        right: 70rpx;
+      }
+    }
+  }
+  // 内容栏目一
+  .waitianev {
+    width: 100%;
+    height: 250rpx;
+    background-color: #fff;
+    margin-top: 30rpx;
+    border-bottom: 1rpx solid #e7e7e7;
+    .carli {
+      width: 90%;
+      height: 250rpx;
+      position: relative;
+      margin-left: 30rpx;
+      // margin-top: 30rpx;
+      // background-color: #fff;
+      .picc {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 250rpx;
+        height: 140rpx;
+        // background-color: pink;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .cenhan {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: absolute;
+        left: 280rpx;
+        top: 50%;
+        height: 130rpx;
+        transform: translateY(-50%);
+        font-size: 24rpx;
+        .shaung {
+          font-size: 28rpx;
+          font-weight: 700;
+        }
+      }
+      .rightyou {
+        position: absolute;
+        font-size: 24rpx;
+        right: 0;
+        bottom: 60rpx;
+        width: 100rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        background-color: #ff7900;
+        border-radius: 15rpx;
+        color: #ffffff;
+      }
+    }
+  }
+  .dibushuo {
+    width: 100%;
+    height: 50rpx;
+    background-color: #fff;
+    line-height: 50rpx;
+    text-align: center;
+    color: #eee;
+    font-size: 20rpx;
+  }
+  // 内容 其他商家
+  .baoguo {
+    margin-top: 30rpx;
+    .tianhong {
+      width: 100%;
+      height: 380rpx;
+      border-bottom: 1rpx solid #eee;
+      background-color: #fff;
+      padding-top: 30rpx;
+      .tucare {
+        position: relative;
+        width: 100%;
+        height: 380rpx;
+        .tucarekk {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          top: 0;
+          width: 95%;
+          height: 350rpx;
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .shuomin {
+          position: absolute;
+          left: 34rpx;
+          top: 254rpx;
+          width: 95%;
+          height: 50rpx;
+          z-index: 100;
+          color: #fff;
+          font-size: 30rpx;
+        }
+      }
+    }
+  }
+}
+</style>

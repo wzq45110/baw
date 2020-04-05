@@ -1,0 +1,343 @@
+<template>
+  <view class="mainwarn">
+    <!-- 顶部区域 -->
+    <view class="topwarn">
+      <view class="first">推荐好友下载注册赢最高100霸气值</view>
+      <view class="second">好友下载APP登陆得50霸气值</view>
+      <view class="third">我的邀请码: XXL6HGR</view>
+      <view class="four">
+        <image src="../../assets/images/erma.png" />
+      </view>
+      <view class="five">分享给以下平台好友</view>
+      <view class="six">
+        <view class="zi">
+          <image src="../../assets/images/wx.png" />
+        </view>
+        <view class="zi">
+          <image src="../../assets/images/fq.png" />
+        </view>
+        <view class="zi">
+          <image src="../../assets/images/zhi.png" />
+        </view>
+        <view class="zi">
+          <image src="../../assets/images/QQ.png" />
+        </view>
+        <view class="zi">
+          <image src="../../assets/images/weibo.png" />
+        </view>
+      </view>
+    </view>
+    <!-- 中下部区域 -->
+    <view class="zhoxiabu">
+      <!-- 邀请栏 -->
+      <view class="yaoqin">
+        <view class="meyao">我的邀请</view>
+        <!-- 二 -->
+        <view class="melan">
+          <view class="melanzi">
+            <view>
+              <text>300</text>霸气值
+            </view>
+            <view>我的保中</view>
+          </view>
+          <view class="melanzi">
+            <view>
+              <text>10</text>人
+            </view>
+            <view>我参与的</view>
+          </view>
+          <view class="melanzi">
+            <view>
+              <text>3</text>人
+            </view>
+            <view>中奖纪录</view>
+          </view>
+        </view>
+        <!-- 循环 -->
+        <view class="xaingxi" wx:for="{{wenzilist}}" wx:key="index">
+          <view class="tuxaing">
+            <image src="{{item.imgurl_1}}" />
+          </view>
+          <view class="neizhi">
+            <view>
+              张老师
+              <text style="color:#999999; font-size: 24rpx;">{{item.test_2}}</text>
+            </view>
+            <view style="color:#E5E5E5; font-size: 24rpx;">{{item.test_3}}</view>
+          </view>
+          <view class="babzui">{{item.test_4}}</view>
+        </view>.
+      </view>
+      <!-- 间隔 -->
+      <view class="jiange"></view>
+      <!-- 参与方式栏 -->
+      <view class="canyulan">
+        <view class="ayfs">参与方式</view>
+        <view class="fangshxai">
+          <view class="zhonger">
+            <view class="tubiao">
+              <image src="../../assets/images/yaohh.png" />
+            </view>
+            <view class="quanzi">
+              <image src="../../assets/images/step1.png" />
+            </view>
+            <view class="textzhi">发送邀请给TA</view>
+          </view>
+          <view class="zhonger">
+            <view class="tubiao">
+              <image src="../../assets/images/xaizai.png" />
+            </view>
+            <view class="quanzi">
+              <image src="../../assets/images/step2.png" />
+            </view>
+            <view class="textzhi">TA下载APP并注册登录</view>
+          </view>
+          <view class="zhonger">
+            <view class="tubiao">
+              <image src="../../assets/images/liwu.png" />
+            </view>
+            <view class="quanzi">
+              <image src="../../assets/images/step3.png" />
+            </view>
+            <view class="textzhi">你获得奖励</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  data = {
+    wenzilist: [
+      {
+        imgurl_1: '../../assets/images/wx.png',
+        test_2: '接受邀请--邀请成功',
+        test_3: '2019-06-7 12:15:01',
+        test_4: '获得20霸气值'
+      },
+      {
+        imgurl_1: '../../assets/images/wx.png',
+        test_2: '接受邀请--邀请成功',
+        test_3: '2019-06-7 12:15:01',
+        test_4: '获得20霸气值'
+      },
+      {
+        imgurl_1: '../../assets/images/wx.png',
+        test_2: '接受邀请--邀请成功',
+        test_3: '2019-06-7 12:15:01',
+        test_4: '获得20霸气值'
+      },
+      {
+        imgurl_1: '../../assets/images/wx.png',
+        test_2: '接受邀请--邀请成功',
+        test_3: '2019-06-7 12:15:01',
+        test_4: '获得20霸气值'
+      }
+    ]
+  }
+}
+</script>
+
+<style lang="less">
+.mainwarn {
+  width: 100%;
+  height: 100%;
+  .topwarn {
+    position: relative;
+    width: 100%;
+    height: 600rpx;
+    .first,
+    .second,
+    .third,
+    .four,
+    .five,
+    .six {
+      text-align: center;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .first {
+      width: 80%;
+      height: 60rpx;
+      top: 40rpx;
+      font-size: 24rpx;
+    }
+    .second {
+      width: 80%;
+      height: 50rpx;
+      top: 80rpx;
+      font-size: 24rpx;
+    }
+    .third {
+      font-size: 32rpx;
+      font-weight: 600;
+      width: 80%;
+      height: 60rpx;
+      top: 150rpx;
+    }
+    .four {
+      top: 220rpx;
+      width: 240rpx;
+      height: 240rpx;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .five {
+      font-size: 20rpx;
+      bottom: 94rpx;
+    }
+    .six {
+      bottom: 0;
+      width: 50%;
+      height: 80rpx;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .zi {
+        width: 10%;
+        height: 60%;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+  .zhoxiabu {
+    width: 100%;
+    height: 1000rpx;
+    background-color: #eee;
+    padding-top: 20rpx;
+    .yaoqin {
+      width: 100%;
+      height: 600rpx;
+      background-color: #fff;
+      .meyao {
+        width: 100%;
+        height: 90rpx;
+        margin-left: 20rpx;
+        line-height: 90rpx;
+      }
+      .melan {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        height: 150rpx;
+        border-top: 1rpx solid #ccc;
+        border-bottom: 1rpx solid #ccc;
+        .melanzi {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          width: 30%;
+          height: 60%;
+          //   background-color: pink;
+          font-size: 26rpx;
+          text {
+            font-size: 34rpx;
+            color: orange;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+    .xaingxi {
+      position: relative;
+      width: 100%;
+      height: 100rpx;
+      background-color: #fff;
+      .tuxaing {
+        left: 20rpx;
+        width: 70rpx;
+        height: 70rpx;
+        // background-color: green;
+        border-radius: 50%;
+        image {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      .neizhi {
+        left: 100rpx;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 400rpx;
+        height: 70%;
+        // font-size: 24rpx;
+      }
+      .babzui {
+        right: 20rpx;
+        color: chocolate;
+        font-weight: 700;
+        font-size: 28rpx;
+      }
+      .tuxaing,
+      .neizhi,
+      .babzui {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .jiange {
+      width: 100%;
+      height: 70rpx;
+      background-color: #eee;
+    }
+    .canyulan {
+      width: 100%;
+      height: 600rpx;
+      background-color:#fff;
+      .ayfs {
+        width: 100%;
+        height: 100rpx;
+        line-height: 100rpx;
+        margin-left: 20rpx;
+        border-bottom: 1rpx solid #ccc;
+      }
+
+      .fangshxai {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 400rpx;
+        // background-color: green;
+        .zhonger {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          width: 30%;
+          height: 400rpx;
+          padding-top: 30rpx;
+        //   background-color: pink;
+          .tubiao {
+            width: 50%;
+            height: 150rpx;
+          }
+          .quanzi {
+            width: 30%;
+            height: 80rpx;
+          }
+          .textzi {
+            width: 80%;
+          }
+          image {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+</style>

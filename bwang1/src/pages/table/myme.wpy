@@ -1,0 +1,284 @@
+<template>
+  <view class="mymain">
+    <!-- 顶部区域 -->
+    <view class="mymaintop">
+      <view class="leftpic">
+        <view class="picnei">
+          <van-icon name="manager" />
+        </view>
+        <view style="color:white; text-align: center;" class="ziti">用户名</view>
+      </view>
+      <view class="rightpeo" @tap="taizhaun">
+        <view>个人资料</view>
+        <view>
+          <van-icon color="wihte" name="arrow" />
+        </view>
+      </view>
+    </view>
+    <!-- 卡片栏 -->
+    <view class="carlan">
+      <view class="zhuwen" wx:for="{{daolist}}" wx:key="index">
+        <navigator url="{{item.url_to}}" hover-class="none" w:if="{{item.url_to !== undefined}}">
+          <view style="color:orange; font-size:60rpx; font-weight:bold;">{{item.number_i}}</view>
+          <viwe style="color:#999999;">{{item.test}}</viwe>
+        </navigator>
+      </view>
+    </view>
+    <!-- 单元格栏 -->
+    <view class="buttonxia">
+      <view class="asdkadk" @tap="gobaqizhi">
+        <view class="leftme">
+          <view class="sfjoi">
+            <van-icon size="20" color="#FF7900" name="add" />
+          </view>
+          <text style="margin-left:10rpx;">霸气值</text>
+        </view>
+        <view class="rightme">
+          <text style="font-size:40rpx;font-weight:900rpx;color:#FF7900; margin-right:10rpx;">360</text>
+          <view class="tuba">
+            <van-icon size="20" name="arrow" />
+          </view>
+        </view>
+      </view>
+
+      <!-- <view>
+        <van-cell title="霸气值" is-link value="360" icon="hot-o" url="/pages/mybf/hotstore"></van-cell>
+        <van-cell title="官方APP/公众号/小程序" is-link icon="graphic"></van-cell>
+      </view>
+      <view class="tbhe">
+        <van-cell title="官方微信(关注不迷路)" is-link icon="chat"></van-cell>
+      </view>
+      <view>
+        <van-cell title="推荐有奖" is-link icon="gold-coin" url="/pages/mybf/warn"></van-cell>
+        <van-cell title="更多" is-link icon="more"></van-cell>
+      </view>-->
+      <view class="linxian"></view>
+      <view class="asdkadk">
+        <view class="leftme">
+          <view class="sfjoi">
+            <van-icon size="20" color="#48AFDC" name="graphic" />
+          </view>
+          <text style="margin-left:10rpx;">官方APP/公众号/小程序</text>
+        </view>
+        <view class="rightme">
+          <text
+            style="font-size:30rpx;font-weight:700rpx;color:#FF7900; margin-right:10rpx; margin-top:5rpx;"
+          ></text>
+          <view class="tuba">
+            <van-icon size="20" name="arrow" />
+          </view>
+        </view>
+      </view>
+      <view class="asdkadk" style="margin-top:30rpx">
+        <view class="leftme">
+          <view class="sfjoi">
+            <van-icon size="20" color="#01C80A" name="chat" />
+          </view>
+          <text style="margin-left:10rpx;">官方微信(关注不迷路)</text>
+        </view>
+        <view class="rightme">
+          <text
+            style="font-size:30rpx;font-weight:700rpx;color:#FF7900; margin-right:10rpx; margin-top:5rpx;"
+          ></text>
+          <view class="tuba">
+            <van-icon size="20" name="arrow" />
+          </view>
+        </view>
+      </view>
+
+      <view class="asdkadk" style="margin-top:30rpx" @tap="gotuijian">
+        <view class="leftme">
+          <view class="sfjoi">
+            <van-icon size="20" color="#FF7900" name="gold-coin" />
+          </view>
+          <text style="margin-left:10rpx;">推荐有奖</text>
+        </view>
+        <view class="rightme">
+          <text
+            style="font-size:30rpx;font-weight:700rpx;color:#FF7900; margin-right:10rpx; margin-top:5rpx;"
+          ></text>
+          <view class="tuba">
+            <van-icon size="20" name="arrow" />
+          </view>
+        </view>
+      </view>
+      <view class="linxian"></view>
+      <view class="asdkadk">
+        <view class="leftme">
+          <view class="sfjoi">
+            <van-icon size="20" color="#48AFDC" name="more" />
+          </view>
+          <text style="margin-left:10rpx;">更多</text>
+        </view>
+        <view class="rightme">
+          <text
+            style="font-size:30rpx;font-weight:700rpx;color:#FF7900; margin-right:10rpx; margin-top:5rpx;"
+          ></text>
+          <view class="tuba">
+            <van-icon size="20" name="arrow" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '我的'
+    // backgroundColor: '#eeeeee',
+  }
+  data = {
+    daolist: [
+      { number_i: 3, test: '我的保中', url_to: '/pages/mybf/confirmed' },
+      { number_i: 5, test: '我参与的', url_to: '' },
+      { number_i: 2, test: '中奖纪录', url_to: '' }
+    ]
+  }
+  onLoad() {
+    // this.tobgkfgds()
+  }
+  methods = {
+    // 跳转 我的资料页面
+    taizhaun() {
+      wepy.navigateTo({
+        url: '/pages/mybf/infoxin'
+      })
+    },
+    gobaqizhi() {
+      wepy.navigateTo({
+        url: '/pages/mybf/hotstore'
+      })
+    },
+    gotuijian() {
+      wepy.navigateTo({
+        url: '/pages/mybf/warn'
+      })
+    }
+  }
+  // 测试调用登录用户
+}
+</script>
+
+<style lang="less">
+.mymain {
+  // background-color: pink;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .mymaintop {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30rpx;
+    height: 250rpx;
+    width: 100%;
+    background-color: #ff7900;
+    background: linear-gradient(to top, #ffa12f, #ffdd96);
+    .leftpic {
+      display: flex;
+      justify-content: space-between;
+      margin-left: 20rpx;
+      .picnei {
+        background-color: #eeeeee;
+        border-radius: 50%;
+      }
+      .ziti,
+      .picnei {
+        width: 120rpx;
+        height: 120rpx;
+        line-height: 120rpx;
+        text-align: center;
+      }
+    }
+    .rightpeo {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 33rpx;
+      width: 200rpx;
+      height: 60rpx;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 25rpx 0 0 25rpx;
+      color: #fff;
+    }
+  }
+  .carlan {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 200rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 200rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+    // box-shadow: 5rpx 5rpx 5rpx;
+    .zhuwen {
+      text-align: center;
+    }
+  }
+  .buttonxia {
+    padding-top: 180rpx;
+    background-color: #eeeeee;
+    width: 100%;
+    height: 650rpx;
+    .asdkadk {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100rpx;
+      font-size: 30rpx;
+      box-sizing: border-box;
+      padding: 0 30rpx;
+      background-color: #ffff;
+      .rightme {
+        width: 30%;
+        text {
+          position: absolute;
+          right: 40rpx;
+          top: 5rpx;
+        }
+        .tuba {
+          position: absolute;
+          right: 0rpx;
+          top: 10rpx;
+        }
+      }
+      .leftme {
+        width: 70%;
+        text {
+          position: absolute;
+          left: 40rpx;
+          top: 8rpx;
+        }
+        .sfjoi {
+          position: absolute;
+          left: 0rpx;
+          top: 10rpx;
+        }
+      }
+      .rightme,
+      .leftme {
+        position: relative;
+        height: 60rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+    .linxian {
+      width: 100%;
+      height: 1rpx;
+      background-color: #ccc;
+      margin-left: 30rpx;
+    }
+  }
+}
+</style>

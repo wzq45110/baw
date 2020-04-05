@@ -1,0 +1,83 @@
+{
+	"description": "霸王",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"nodeModules": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wxc4668f0463989eae",
+	"projectname": "ordalwx",
+	"miniprogramRoot": "dist/",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/table/baba",
+					"pathName": "pages/table/baba",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/table/myme",
+					"pathName": "pages/table/myme",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mybz/confirmed",
+					"pathName": "pages/mybz/confirmed",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mybz/infoxin",
+					"pathName": "pages/mybz/infoxin",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/mybz/hotstore",
+					"pathName": "pages/mybz/hotstore",
+					"scene": null
+				}
+			]
+		}
+	}
+}

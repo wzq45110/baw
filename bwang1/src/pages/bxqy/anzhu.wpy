@@ -1,0 +1,97 @@
+<template>
+  <view class="anzhuumain">
+    <!-- 输入区域 -->
+    <van-cell-group>
+      <van-field left-icon="coupon" label="名称:" placeholder="请输入名称" bind:click-icon="onClickIcon" />
+
+      <van-field
+        left-icon="manager"
+        label="联系人:"
+        placeholder="请输入联系人"
+        bind:click-icon="onClickIcon"
+      />
+      <van-field
+        value="{{ username }}"
+        left-icon="bag"
+        label="职务:"
+        placeholder="请输入你的职务"
+        bind:click-icon="onClickIcon"
+      />
+      <van-field
+        value="{{ username }}"
+        left-icon="phone-circle"
+        label="电话:"
+        placeholder="请输入11位的联系方式"
+        bind:click-icon="onClickIcon"
+      />
+      <van-field
+        value="{{ username }}"
+        left-icon="location"
+        label="地址:"
+        placeholder="请输入你的详细地址"
+        bind:click-icon="onClickIcon"
+      />
+    </van-cell-group>
+    <!-- 提交按钮区域 -->
+    <view class="anquuu">
+      <button class="butjiao">提交</button>
+    </view>
+    <!-- 联系区域 -->
+    <view class="phoneren">
+      <view style="margin:30rpx 0;">联系我们</view>
+      <view class="xiaodianh">电话: 0755-xxxxxx</view>
+      <view class="xiaodianh">手机: 138xxxxxxxx 张经理</view>
+      <view style="color:#FE7D11; font-size:36rpx;margin-top:30rpx;">全国服务热线: 400-xxx-xxxx</view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '我的赞助'
+    // backgroundColor: '#eeeeee',
+  }
+}
+</script>
+<style lang="less">
+.anzhuumain {
+  width: 100%;
+  height: 100%;
+  background-color: #eeeeee;
+  .anquuu {
+    position: relative;
+    width: 100%;
+    height: 120rpx;
+    background-color: #fff;
+    padding-top: 40rpx;
+    .butjiao {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      color: #fff;
+      height: 80rpx;
+      line-height: 80rpx;
+      text-align: center;
+      border-radius: 40rpx;
+      background-color: #ff7900;
+    }
+  }
+  .phoneren {
+    margin-top: 20rpx;
+    background-color: #fff;
+    width: 100%;
+    // height: 500rpx;
+    padding-top: 30rpx;
+    padding-left: 20rpx;
+    .xiaodianh {
+      font-size: 24rpx;
+      width: 100%;
+      height: 60rpx;
+      line-height: 60rpx;
+    }
+  }
+}
+</style>

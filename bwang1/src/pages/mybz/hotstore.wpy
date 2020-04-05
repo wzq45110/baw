@@ -1,0 +1,280 @@
+<template>
+  <view class="hotzhimain">
+    <!-- 头部区域 -->
+    <view class="tophot">
+      <view class="shzhi">
+        <view>
+          今日已获得:
+          <text style="color:orange; font-size:30rpx; font-weight:400;">15</text>
+        </view>
+        <view style="margin-right:40rpx;">
+          总霸气值:
+          <text style="color:orange; font-size:30rpx; font-weight:400;">360</text>
+        </view>
+      </view>
+      <view class="xiahi">
+        <view>连续签到领取霸气值</view>
+        <view class="biao">
+          <view style="margin-right:4rpx;">签到提醒</view>
+          <view>
+            <van-switch
+              active-color="#ccc"
+              inactive-color="#fff"
+              size="30rpx"
+              checked="{{ checked }}"
+              @tap="onChange"
+            />
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 后面部分 -->
+    <view class="houmian">
+      <!--进度栏 -->
+      <view class="jibu">
+        <!-- 步子 -->
+        <view>
+          <van-steps
+            steps="{{ steps }}"
+            active="0"
+            inactive-icon="add"
+            active-color="orange"
+            active-icon="add"
+          />
+        </view>
+        <!--  -->
+        <view class="ziti">已经领取</view>
+        <view class="butqian">已签到, 明日再来</view>
+      </view>
+      <!-- 每日任务 -->
+      <view class="dayren">
+        <view class="diyiday">每日任务</view>
+        <view class="wenzih" wx:for="{{jianglist}}" wx:key="index">
+          <view class="leftjia">
+            <view>{{item.test_1}}</view>
+            <view class="xaiozi">
+              <text>{{item.test_3}}</text>
+              {{item.test_4}}
+              <text>{{item.test_5}}</text>
+              {{item.test_6}}
+            </view>
+          </view>
+          <view class="logoqu">{{item.test_2}}</view>
+        </view>
+      </view>
+      <!-- 新手任务 -->
+      <view class="dayren">
+        <view class="diyiday">新手任务</view>
+        <view class="wenzih" wx:for="{{xinlist}}" wx:key="index">
+          <view class="leftjia">
+            <view>{{item.testt_1}}</view>
+            <view class="xaiozi">
+              <text>{{item.testt_2}}</text>
+              {{item.testt_3}}
+            </view>
+          </view>
+          <view class="logoqu">{{item.testt_4}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  data = {
+    // 每日任务内容文字
+    jianglist: [
+      {
+        test_1: '参与每日或自助抽奖',
+        test_2: '去参与',
+        test_3: '0.3',
+        test_4: '霸气值/次, 日上限',
+        test_5: '3',
+        test_6: '霸气值'
+      },
+      {
+        test_1: '参与每日或自助抽奖',
+        test_2: '去参与',
+        test_3: '0.3',
+        test_4: '霸气值/次, 日上限',
+        test_5: '3',
+        test_6: '霸气值'
+      },
+      {
+        test_1: '参与每日或自助抽奖',
+        test_2: '去参与',
+        test_3: '0.3',
+        test_4: '霸气值/次, 日上限',
+        test_5: '3',
+        test_6: '霸气值'
+      },
+      {
+        test_1: '参与每日或自助抽奖',
+        test_2: '去参与',
+        test_3: '0.3',
+        test_4: '霸气值/次, 日上限',
+        test_5: '3',
+        test_6: '霸气值'
+      }
+    ],
+    // 新手任务内容文字
+    xinlist: [
+      {
+        testt_1: '下载App',
+        testt_2: '50',
+        testt_3: '霸气值',
+        testt_4: '去下载'
+      },
+      {
+        testt_1: '下载App',
+        testt_2: '50',
+        testt_3: '霸气值',
+        testt_4: '去下载'
+      },
+      {
+        testt_1: '下载App',
+        testt_2: '50',
+        testt_3: '霸气值',
+        testt_4: '去下载'
+      }
+    ],
+    checked: false,
+    steps: [
+      {
+        desc: '第一天'
+      },
+      {
+        text: '第二天'
+      },
+      {
+        text: '第三天'
+      },
+      {
+        text: '第四天'
+      },
+      {
+        text: '第五天'
+      },
+      {
+        text: '第六天'
+      },
+      {
+        text: '第七天'
+      }
+    ]
+  }
+  methods = {
+    onChange() {
+      // 需要手动对 checked 状态进行更新
+      this.checked = !this.checked
+    }
+  }
+}
+</script>
+
+<style lang="less">
+.hotzhimain {
+  width: 100%;
+  height: 100%;
+  .tophot {
+    width: 100%;
+    height: 200rpx;
+    // background-color: pink;
+    .shzhi {
+      border-bottom: 1rpx solid #ccc;
+    }
+    .shzhi,
+    .xiahi {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      height: 100rpx;
+      padding: 0 20rpx;
+    }
+    .biao {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 40rpx;
+    }
+  }
+  .houmian {
+    width: 100%;
+    height: 1000rpx;
+    background-color: #eeeeee;
+    padding-top: 30rpx;
+    .jibu {
+      position: relative;
+      width: 100%;
+      height: 300rpx;
+      background-color: #fff;
+      .ziti {
+        margin-top: 10rpx;
+        margin-left: 10rpx;
+        color: orange;
+      }
+      .butqian {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        height: 100rpx;
+        line-height: 100rpx;
+        background-color: #ff7900;
+        border-radius: 25rpx;
+        margin-top: 10rpx;
+        color: #fff;
+        text-align: center;
+      }
+    }
+    .dayren {
+      width: 100%;
+      height: 600rpx;
+      background-color: #fff;
+      margin-top: 30rpx;
+      .diyiday {
+        width: 100%;
+        height: 90rpx;
+        line-height: 90rpx;
+        margin-left: 20rpx;
+        font-weight: 900;
+      }
+      .wenzih {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 120rpx;
+        border-top: 1rpx solid #eeeeee;
+        .logoqu {
+          background-color: #ff7900;
+          color: #fff;
+          height: 70rpx;
+          line-height: 60rpx;
+          text-align: center;
+          width: 140rpx;
+          border-radius: 30rpx;
+          margin-right: 35rpx;
+        }
+        .leftjia {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 500rpx;
+          height: 100rpx;
+          margin-left: 20rpx;
+          .xaiozi {
+            color: #b2b2b2;
+            font-size: 24rpx;
+            text {
+              color: #ff7900;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</style>

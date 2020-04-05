@@ -1,0 +1,65 @@
+<template>
+  <view class="newmaindre">
+    <!-- <van-icon name="manager" slot="left-icon"/> -->
+    <van-cell-group border="false">
+      <van-cell title="尼古拉斯" icon="contact" />
+      <van-cell title="13745634890" icon="orders-o" />
+      <van-cell title="重庆市渝北区冉家呗" icon="location-o" />
+      <van-cell title="请输入详细地址" icon="aim" border="false" />
+    </van-cell-group>
+    <!-- 割线区域 -->
+    <view class="fengege"></view>
+    <!-- 默认地址 -->
+    <view class="mozhi">
+      <van-radio checked-color="#FF7900">设置默认地址</van-radio>
+    </view>
+    <!-- 保存按钮区域 -->
+    <view class="baoan">保存</view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '新增地址'
+  }
+  data = {
+    // checked: false
+  }
+  methods = {
+    // onChange() {
+    //   this.checked = true
+    // }
+  }
+}
+</script>
+<style lang="less">
+.newmaindre {
+  width: 100%;
+  height: 100%;
+  .fengege {
+    width: 100%;
+    height: 30rpx;
+    background-color: #eeeeee;
+  }
+  .mozhi {
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+  }
+  .baoan {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    //   top: 400rpx;
+    width: 90%;
+    height: 80rpx;
+    background-color: #ff7900;
+    border-radius: 40rpx;
+    margin-top: 80rpx;
+    color: #ffff;
+    line-height: 80rpx;
+    text-align: center;
+  }
+}
+</style>

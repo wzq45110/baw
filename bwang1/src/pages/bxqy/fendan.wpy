@@ -1,0 +1,117 @@
+<template>
+  <view>
+    <!-- 顶部区域 -->
+    <view class="wenzih">
+      <view class="leftjia">
+        <view class="tufendan">
+          <image src="../../assets/images/oppo.png" />
+        </view>麦肯基西乡店
+      </view>
+      <view class="logoqu">取消关注</view>
+    </view>
+    <view class="gegetiao"></view>
+    <!--店详情页面 -->
+    <view class="dianrei" wx:for="{{6}}" wx:key="index">
+      <view class="zuodinzhi">
+        <view>
+          肯德基(西乡店)
+          <van-tag round plain color="#FF7901" text-color="#FF7901" type="warning">+ 关注</van-tag>
+        </view>
+        <view style="font-size:24rpx; color:#717171;">深圳市罗湖区文锦路13号楼 3号 一侧吧</view>
+        <view style="font-size:20rpx; color:#ccc;">
+          <van-icon name="location" color="#FF7800" />
+          <van-icon name="arrow-left" />0.5km 离我最近
+        </view>
+      </view>
+      <view class="lineba"></view>
+      <view class="youbilo">
+        <van-icon name="phone-circle-o" size="40px" />
+      </view>
+    </view>
+  </view>
+</template>
+<script>
+import wepy from 'wepy'
+export default class extends wepy.page {
+  config = {
+    navigationBarTextStyle: 'white',
+    navigationBarTitleText: '关注'
+    // backgroundColor: '#eeeeee',
+  }
+}
+</script>
+<style lang="less">
+.wenzih {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  .logoqu {
+    background-color: #ff7900;
+    color: #fff;
+    font-size: 28rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    width: 180rpx;
+    border-radius: 30rpx;
+    margin-right: 35rpx;
+  }
+  .leftjia {
+    width: 300rpx;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+    .tufendan {
+      width: 80rpx;
+      height: 80rpx;
+      border: 10rpx solid #fed6b1;
+      border-radius: 50%;
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.gegetiao {
+  width: 100%;
+  height: 30rpx;
+  background-color: #eeeeee;
+}
+.dianrei {
+  position: relative;
+  width: 100%;
+  height: 200rpx;
+  border-bottom: 1rpx solid #eee;
+  .zuodinzhi,
+  .lineba,
+  .youbilo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .zuodinzhi {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    left: 30rpx;
+    height: 150rpx;
+    width: 60%;
+  }
+  .lineba {
+    width: 1rpx;
+    height: 100rpx;
+    background-color: #ccc;
+    right: 220rpx;
+  }
+  .youbilo {
+    right: 70rpx;
+  }
+}
+</style>
